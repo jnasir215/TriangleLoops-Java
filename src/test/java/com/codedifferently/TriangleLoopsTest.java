@@ -6,9 +6,11 @@ import org.junit.Test;
 public class TriangleLoopsTest {
     @Test
     public void getRow() {
-        String expected = "********************";
         int width = 20;
+
+        String expected = "********************";
         String actual = TriangleLoops.getRow(width);
+
         Assert.assertEquals(expected, actual);
     }
 
@@ -41,6 +43,17 @@ public class TriangleLoopsTest {
     }
 
     @Test
+    public void testGetSmallTriangle() {
+        String expected =
+                "*\n" +
+                "**\n" +
+                "***\n" +
+                "****\n";
+        String actual = TriangleLoops.getSmallTriangle();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void testGetLargeTriangle() {
         String expected =
                 "*\n" +
@@ -53,18 +66,6 @@ public class TriangleLoopsTest {
                 "********\n" +
                 "*********\n";
         String actual = TriangleLoops.getLargeTriangle();
-        Assert.assertEquals(expected, actual);
-    }
-
-
-    @Test
-    public void testGetSmallTriangle() {
-        String expected =
-                "*\n" +
-                "**\n" +
-                "***\n" +
-                "****\n";
-        String actual = TriangleLoops.getSmallTriangle();
         Assert.assertEquals(expected, actual);
     }
 }
